@@ -7,11 +7,17 @@ import { join } from 'node:path';
 const { chromium } = await import(pathToFileURL(join(process.env.CAVLI_PLAYWRIGHT, 'index.mjs')).href);
 const base = 'https://cavli-assignment-1.nishanameenk.workers.dev';
 const browser = await chromium.launch({ executablePath: process.env.CAVLI_CHROME, headless: true });
+// The site shows its own sign-in page (no browser credentials challenge), so each browser context signs in through the
+// real form first; the context's request client shares its cookies with the pages.
+async function signIn(ctx, origin, password) {
+  const r = await ctx.request.post(origin + '/login', { form: { username: 'reviewer', password }, maxRedirects: 0 });
+  if (r.status() !== 303) throw new Error(`sign-in failed (HTTP ${r.status()})`);
+}
 const results = [];
 try {
   for (const [width, height, name] of [[1440, 900, 'desktop'], [390, 844, 'mobile']]) {
-    const context = await browser.newContext({ viewport: { width, height },
-      httpCredentials: { username: 'reviewer', password: process.env.DEMO_ACCESS_SECRET } });
+    const context = await browser.newContext({ viewport: { width, height } });
+    await signIn(context, base, process.env.DEMO_ACCESS_SECRET);
     const page = await context.newPage();
     const errors = []; page.on('pageerror', e => errors.push(e.message));
     page.on('response', r => { if (r.status() >= 400) errors.push(r.status() + ' ' + new URL(r.url()).pathname); });

@@ -3,7 +3,7 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import app from '../dist/worker.mjs';
 
-const assets = new Map([['/', ['index.html','text/html']],['/styles.css',['styles.css','text/css']],['/app.js',['app.js','text/javascript']],['/cavli-logo.svg',['cavli-logo.svg','image/svg+xml']],
+const assets = new Map([['/', ['index.html','text/html']],['/styles.css',['styles.css','text/css']],['/app.js',['app.js','text/javascript']],['/cavli-logo.svg',['cavli-logo.svg','image/svg+xml']],['/login.css',['login.css','text/css']],
   ...['400','500','600'].map(w=>['/fonts/space-grotesk-latin-'+w+'-normal.woff2',['fonts/space-grotesk-latin-'+w+'-normal.woff2','font/woff2']])]);
 const env = {
   SUPABASE_URL: process.env.SUPABASE_URL,

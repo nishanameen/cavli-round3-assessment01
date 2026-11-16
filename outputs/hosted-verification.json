@@ -1,6 +1,6 @@
 {
   "base": "https://cavli-assignment-1.nishanameenk.workers.dev",
-  "checkedAt": "2026-11-15T11:50:04.102Z",
+  "checkedAt": "2026-11-16T17:26:28.604Z",
   "checks": [
     {
       "name": "Reviewer gate",
@@ -32,9 +32,9 @@
       ],
       "helpLinks": [],
       "timing": {
-        "total_ms": 1546,
-        "retrieval_ms": 711,
-        "model_ms": 835
+        "total_ms": 2362,
+        "retrieval_ms": 1585,
+        "model_ms": 777
       },
       "retrieval": "pgvector + exact matches",
       "generation": "Gemini evidence selection",
@@ -55,9 +55,9 @@
       ],
       "helpLinks": [],
       "timing": {
-        "total_ms": 9830,
-        "retrieval_ms": 283,
-        "model_ms": 9547
+        "total_ms": 2980,
+        "retrieval_ms": 599,
+        "model_ms": 2381
       },
       "retrieval": "pgvector + exact matches",
       "generation": "verified facts",
@@ -78,8 +78,8 @@
       ],
       "helpLinks": [],
       "timing": {
-        "total_ms": 15306,
-        "retrieval_ms": 306,
+        "total_ms": 15454,
+        "retrieval_ms": 454,
         "model_ms": 15000
       },
       "retrieval": "pgvector + exact matches",
@@ -107,8 +107,8 @@
       ],
       "helpLinks": [],
       "timing": {
-        "total_ms": 1253,
-        "retrieval_ms": 1253,
+        "total_ms": 251,
+        "retrieval_ms": 251,
         "model_ms": 0
       },
       "retrieval": "Supabase structured specs",

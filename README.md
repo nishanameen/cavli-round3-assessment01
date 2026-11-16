@@ -6,7 +6,7 @@ Assignment 1 browser prototype for two public Cavli cellular IoT modules. The ap
 
 *A 24-second excerpt from the demo film. The full film is in the submission folder.*
 
-**Live demo:** [cavli-assignment-1.nishanameenk.workers.dev](https://cavli-assignment-1.nishanameenk.workers.dev). Sign in as `reviewer`; the password is in the submission PDF.
+**Live demo:** [cavli-assignment-1.nishanameenk.workers.dev](https://cavli-assignment-1.nishanameenk.workers.dev). It opens on a reviewer sign-in page: sign in as `reviewer` with the password from the submission PDF.
 
 **Interface (redesigned 15 November 2026).** The home screen uses the vividsites Prompt Chips component: rows of suggested C16QS and C20QM questions drift past, stop on hover, and can be dragged. Clicking a chip flies it into the question bar and types the full question; you review it, then press Enter or Send. Follow-up questions use the same bar. The header shows the official Cavli Wireless logo, and the type is Space Grotesk, served from the site itself so the strict content security policy is unchanged. Reduced-motion settings hold the rows still, and the layout works at 375 px.
 
@@ -27,7 +27,7 @@ Example health check: `select count(*) from public.product_evidence where embedd
 
 ## Cloudflare deployment
 
-Open the [verified hosted reviewer demo](https://cavli-assignment-1.nishanameenk.workers.dev). Sign in as `reviewer` with the password provided separately.
+Open the [verified hosted reviewer demo](https://cavli-assignment-1.nishanameenk.workers.dev) and sign in as `reviewer` with the password from the submission PDF. The site opens on a reviewer sign-in page (a server-rendered card, `src/review-gate.ts` and `login.css`, laid out after the Astryx login-card template). A correct password sets a signed, HttpOnly session cookie for seven days. Automated checks sign in through the same form; `Authorization: Basic` sent up front is also accepted. Check the sign-in flow with `node --env-file=.env scripts/signin-check.mjs <url> outputs/signin "Ask about a Cavli module"`.
 
 To redeploy the existing demo from an authenticated PowerShell session, run `npm run build` and then `& .\scripts\deploy-hosted.ps1` from the app directory. The script loads secrets from the local `.env`, deploys the Worker, and runs the hosted smoke checks. Keep `.env` outside the submission. For a different deployment, update the Worker configuration and smoke-test URL first.
 

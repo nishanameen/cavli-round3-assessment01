@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import catalog from './catalog.json';
+import { reviewGate } from './review-gate';
 
 type Env = {
   ASSETS: { fetch(request: Request): Promise<Response> };
@@ -134,13 +135,10 @@ function feedbackSecret(env: Env) {
 app.use('*', async (c, next) => {
   const deployed = new URL(c.req.url).hostname.endsWith('.workers.dev');
   if (deployed && !c.env.DEMO_ACCESS_SECRET) return c.text('Demo access is not configured.', 503);
-  if (c.env.DEMO_ACCESS_SECRET) {
-    const header = c.req.header('Authorization') ?? '';
-    const expected = 'Basic ' + btoa('reviewer:' + c.env.DEMO_ACCESS_SECRET);
-    if (!fixedEqual(header, expected)) return c.text('Reviewer sign-in required.', 401, {
-      'WWW-Authenticate': 'Basic realm="Cavli assessment", charset="UTF-8"', 'Cache-Control': 'no-store',
-    });
-  }
+  // Reviewer sign-in card (session cookie), or Basic credentials sent up front by automated checks.
+  const gated = await reviewGate(c.req.raw, c.env.DEMO_ACCESS_SECRET,
+    { product: 'Cavli Module Assistant', assignment: 'Assignment 1' }, (r) => c.env.ASSETS.fetch(r));
+  if (gated) return gated;
   await next();
   c.header('X-Content-Type-Options', 'nosniff');
   c.header('Referrer-Policy', 'strict-origin-when-cross-origin');

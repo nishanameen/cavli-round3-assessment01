@@ -20,6 +20,16 @@ All five sample questions passed both the [hosted API check](hosted-verification
 
 The initial API speed question hit the 15-second Gemini timeout and still returned the correct cited answer from verified facts. A direct recheck used live Supabase and Gemini in 1.68 seconds, and all three factual answers used both providers in the Chrome run. A separate 375 px Chrome check displayed the feedback confirmation after clicking Helpful. Postgres confirmed the matching `chat_feedback` row with the rating, answered status, and `c16qs-bands` evidence ID. No deployment or reviewer-flow blocker remains.
 
+## Reviewer sign-in page (16 November 2026)
+
+The browser's basic-auth prompt was replaced by a reviewer sign-in card, and the reviewer password was changed to the value in the submission PDF. The site opens on a reviewer sign-in page (a server-rendered card, `src/review-gate.ts` and `login.css`, laid out after the Astryx login-card template). A correct password sets a signed, HttpOnly session cookie for seven days. Automated checks sign in through the same form; `Authorization: Basic` sent up front is also accepted. Worker version `7a61364a-b25e-408c-b130-a6cba3160a9c` was deployed with `wrangler deploy` (existing Worker secrets kept).
+
+| Check | Result | Record |
+| --- | --- | --- |
+| Sign-in flow on the live site: anonymous page shows the card (401), anonymous API 401, wrong password error, correct password opens the app with an HttpOnly cookie, /login redirect, Basic header, sign-out, 390 px, no CSP errors | 9/9 | [signin/signin-check.json](signin/signin-check.json) |
+| Hosted smoke checks: reviewer gate, UI, provider bindings, five samples, live Supabase and Gemini, feedback | 10/10 | [hosted-verification.json](hosted-verification.json) |
+| Live interface check (desktop and 390 px), signed in through the form | Passed | [hosted-ui-check.json](hosted-ui-check.json) |
+
 ## Interface redesign (15 November 2026)
 
 The page was redesigned with the vividsites Prompt Chips component, the official Cavli Wireless logo (`cavliwireless.com/Cavli_Wireless.svg`, unmodified) and self-hosted Space Grotesk. The answer engine, catalog, API and security headers are unchanged. Worker version `73160050-c9b8-43a3-99bb-b43ef5d1dbea` was deployed with `scripts/deploy-hosted.ps1`.

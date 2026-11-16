@@ -4,6 +4,7 @@ import { copyFile, mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 await mkdir('dist/web/fonts', { recursive: true });
 await copyFile('web/index.html', 'dist/web/index.html');
 await copyFile('web/cavli-logo.svg', 'dist/web/cavli-logo.svg');
+await copyFile('web/login.css', 'dist/web/login.css');
 // The prompt-chips stylesheet first, then the page styles that sit around it.
 await writeFile('dist/web/styles.css', (await readFile('web/prompt-chips.css', 'utf8')) + '\n' + (await readFile('web/styles.css', 'utf8')));
 for (const file of await readdir('web/fonts')) await copyFile('web/fonts/' + file, 'dist/web/fonts/' + file);
