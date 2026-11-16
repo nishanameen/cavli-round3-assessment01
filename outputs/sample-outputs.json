@@ -1,0 +1,129 @@
+{
+  "captured_at": "2026-11-14T15:59:00.192Z",
+  "mode": "In-process Worker",
+  "outputs": [
+    {
+      "question": "What are the C16QS peak download and upload speeds?",
+      "passed": true,
+      "answer": "C16QS LTE Cat 1bis has published peak speeds of 10 Mbps downlink and 5 Mbps uplink.",
+      "status": "answered",
+      "citations": [
+        {
+          "id": "c16qs-speed",
+          "module": "C16QS",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 11,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      }
+    },
+    {
+      "question": "Which LTE bands does the C16QS India variant support?",
+      "passed": true,
+      "answer": "Cavli lists LTE bands 1, 3, 5, 8, 40, and 41 for the C16QS India (IN) variant.",
+      "status": "answered",
+      "citations": [
+        {
+          "id": "c16qs-bands",
+          "module": "C16QS",
+          "section": "Technical Data · Cellular Bands",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 1,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      }
+    },
+    {
+      "question": "Does every C16QS variant have eSIM?",
+      "passed": true,
+      "answer": "No. Integrated eSIM varies by C16QS SKU. Cavli lists eSIM for C16QS-IN-GNAH, C16QS-NA-GNAH and C16QS-EU-GNAH, and lists no eSIM for C16QS-IN-GNAN, C16QS-NA-GNAN and C16QS-EU-GNAN.",
+      "status": "answered",
+      "citations": [
+        {
+          "id": "c16qs-esim",
+          "module": "C16QS",
+          "section": "Variants Available for Ordering Samples",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 0,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      }
+    },
+    {
+      "question": "Which module should I shortlist for at least 20 Mbps published peak downlink?",
+      "passed": true,
+      "answer": "Shortlist C20QM for that published peak downlink requirement.\n\nC16QS: 10 Mbps peak downlink.\nC20QM: 150 Mbps peak downlink.\n\nThese are published peak figures. Check actual throughput for your deployment.",
+      "status": "recommendation",
+      "citations": [
+        {
+          "id": "c16qs-speed",
+          "module": "C16QS",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        },
+        {
+          "id": "c20qm-speed",
+          "module": "C20QM",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c20qm"
+        }
+      ],
+      "helpLinks": [],
+      "retrieval": "structured product specs",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 1,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      }
+    },
+    {
+      "question": "Will the C16QS work with my custom antenna and carrier configuration?",
+      "passed": true,
+      "answer": "That’s not verified in the available sources. For confirmation, check the official product page or contact Cavli support with your exact SKU and deployment details.",
+      "status": "unsupported",
+      "citations": [],
+      "helpLinks": [
+        {
+          "label": "C16QS product page",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        },
+        {
+          "label": "Cavli support",
+          "url": "https://www.cavliwireless.com/support-center"
+        }
+      ],
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 0,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      }
+    }
+  ]
+}

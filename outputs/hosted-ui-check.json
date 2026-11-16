@@ -1,0 +1,10 @@
+{
+  "base": "https://cavli-assignment-1.nishanameenk.workers.dev",
+  "checkedAt": "2026-11-15T11:51:59.999Z",
+  "passed": true,
+  "checks": [
+    "desktop: logo, font, chip fill, no focus box, live answer, no errors",
+    "mobile: logo, font, chip fill, no focus box, live answer, no errors"
+  ],
+  "note": "Live Chrome check of the redesigned UI. Reduced motion keeps the chip rows still so chips can be clicked by name."
+}

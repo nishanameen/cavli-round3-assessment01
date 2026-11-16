@@ -1,0 +1,153 @@
+{
+  "base": "https://cavli-assignment-1.nishanameenk.workers.dev",
+  "checkedAt": "2026-11-15T11:50:04.102Z",
+  "checks": [
+    {
+      "name": "Reviewer gate",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "Hosted chat UI",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "Provider bindings",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "What are the C16QS peak download and upload speeds?",
+      "passed": true,
+      "status": 200,
+      "answer": "C16QS LTE Cat 1bis has published peak speeds of 10 Mbps downlink and 5 Mbps uplink.",
+      "citations": [
+        {
+          "id": "c16qs-speed",
+          "module": "C16QS",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "timing": {
+        "total_ms": 1546,
+        "retrieval_ms": 711,
+        "model_ms": 835
+      },
+      "retrieval": "pgvector + exact matches",
+      "generation": "Gemini evidence selection",
+      "degraded": false
+    },
+    {
+      "name": "Which LTE bands does the C16QS India variant support?",
+      "passed": true,
+      "status": 200,
+      "answer": "Cavli lists LTE bands 1, 3, 5, 8, 40, and 41 for the C16QS India (IN) variant.",
+      "citations": [
+        {
+          "id": "c16qs-bands",
+          "module": "C16QS",
+          "section": "Technical Data · Cellular Bands",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "timing": {
+        "total_ms": 9830,
+        "retrieval_ms": 283,
+        "model_ms": 9547
+      },
+      "retrieval": "pgvector + exact matches",
+      "generation": "verified facts",
+      "degraded": true
+    },
+    {
+      "name": "Does every C16QS variant have eSIM?",
+      "passed": true,
+      "status": 200,
+      "answer": "No. Integrated eSIM varies by C16QS SKU. Cavli lists eSIM for C16QS-IN-GNAH, C16QS-NA-GNAH and C16QS-EU-GNAH, and lists no eSIM for C16QS-IN-GNAN, C16QS-NA-GNAN and C16QS-EU-GNAN.",
+      "citations": [
+        {
+          "id": "c16qs-esim",
+          "module": "C16QS",
+          "section": "Variants Available for Ordering Samples",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        }
+      ],
+      "helpLinks": [],
+      "timing": {
+        "total_ms": 15306,
+        "retrieval_ms": 306,
+        "model_ms": 15000
+      },
+      "retrieval": "pgvector + exact matches",
+      "generation": "verified facts",
+      "degraded": true
+    },
+    {
+      "name": "Which module should I shortlist for at least 20 Mbps published peak downlink?",
+      "passed": true,
+      "status": 200,
+      "answer": "Shortlist C20QM for that published peak downlink requirement.\n\nC16QS: 10 Mbps peak downlink.\nC20QM: 150 Mbps peak downlink.\n\nThese are published peak figures. Check actual throughput for your deployment.",
+      "citations": [
+        {
+          "id": "c16qs-speed",
+          "module": "C16QS",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        },
+        {
+          "id": "c20qm-speed",
+          "module": "C20QM",
+          "section": "Technical Data",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c20qm"
+        }
+      ],
+      "helpLinks": [],
+      "timing": {
+        "total_ms": 1253,
+        "retrieval_ms": 1253,
+        "model_ms": 0
+      },
+      "retrieval": "Supabase structured specs",
+      "generation": "verified facts",
+      "degraded": false
+    },
+    {
+      "name": "Will the C16QS work with my custom antenna and carrier configuration?",
+      "passed": true,
+      "status": 200,
+      "answer": "That’s not verified in the available sources. For confirmation, check the official product page or contact Cavli support with your exact SKU and deployment details.",
+      "citations": [],
+      "helpLinks": [
+        {
+          "label": "C16QS product page",
+          "url": "https://www.cavliwireless.com/iot-modules/c-series/c16qs"
+        },
+        {
+          "label": "Cavli support",
+          "url": "https://www.cavliwireless.com/support-center"
+        }
+      ],
+      "timing": {
+        "total_ms": 0,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      },
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false
+    },
+    {
+      "name": "Live Supabase and Gemini answer",
+      "passed": true
+    },
+    {
+      "name": "Hosted feedback request",
+      "passed": true,
+      "status": 200
+    }
+  ]
+}

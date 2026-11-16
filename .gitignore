@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+outputs/private/
+
+# Submission repo: no videos or video-production files (shared separately), no assessment brief
+outputs/video/
+*.mp4
+*.mov
+*.wav
+*.mp3
+assessment_questions/

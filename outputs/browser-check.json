@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "Desktop and 375px mobile view",
+    "Official logo loads",
+    "Prompt chip fills the input before sending",
+    "Pending indicator appears",
+    "Desktop source inspector, mobile source sheet, citation focus and Escape",
+    "Product shortlist and links",
+    "Feedback confirmed and linked to answer evidence IDs",
+    "Keyboard send and evidence fallback",
+    "Reset, mobile band question, and no browser errors"
+  ],
+  "transport": "Playwright routes browser requests to the bundled Worker in-process"
+}

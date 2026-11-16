@@ -1,0 +1,28 @@
+{
+  "name": "cavli-module-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && wrangler dev --port 8789",
+    "preview": "npm run build && node --env-file-if-exists=.dev.vars scripts/preview.mjs",
+    "sample": "node scripts/sample.mjs",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@fontsource/space-grotesk": "5.3.0",
+    "hono": "4.13.12",
+    "lucide-react": "1.49.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "wrangler": "4.86.0"
+  }
+}

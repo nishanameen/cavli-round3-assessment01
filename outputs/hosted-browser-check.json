@@ -1,0 +1,115 @@
+{
+  "base": "https://cavli-assignment-1.nishanameenk.workers.dev",
+  "checkedAt": "2026-11-14T16:13:54Z",
+  "checks": [
+    {
+      "name": "Reviewer sign-in and desktop UI",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "What are the C16QS peak download and upload speeds?",
+      "passed": true,
+      "status": 200,
+      "retrieval": "pgvector + exact matches",
+      "generation": "Gemini evidence selection",
+      "degraded": false,
+      "timing": {
+        "total_ms": 3858,
+        "retrieval_ms": 2182,
+        "model_ms": 1676
+      },
+      "evidence": [
+        "c16qs-speed"
+      ]
+    },
+    {
+      "name": "Which LTE bands does the C16QS India variant support?",
+      "passed": true,
+      "status": 200,
+      "retrieval": "pgvector + exact matches",
+      "generation": "Gemini evidence selection",
+      "degraded": false,
+      "timing": {
+        "total_ms": 1398,
+        "retrieval_ms": 248,
+        "model_ms": 1150
+      },
+      "evidence": [
+        "c16qs-bands"
+      ]
+    },
+    {
+      "name": "Does every C16QS variant have eSIM?",
+      "passed": true,
+      "status": 200,
+      "retrieval": "pgvector + exact matches",
+      "generation": "Gemini evidence selection",
+      "degraded": false,
+      "timing": {
+        "total_ms": 3216,
+        "retrieval_ms": 250,
+        "model_ms": 2966
+      },
+      "evidence": [
+        "c16qs-esim"
+      ]
+    },
+    {
+      "name": "Which module should I shortlist for at least 20 Mbps published peak downlink?",
+      "passed": true,
+      "status": 200,
+      "retrieval": "Supabase structured specs",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 177,
+        "retrieval_ms": 177,
+        "model_ms": 0
+      },
+      "evidence": [
+        "c16qs-speed",
+        "c20qm-speed"
+      ]
+    },
+    {
+      "name": "Will the C16QS work with my custom antenna and carrier configuration?",
+      "passed": true,
+      "status": 200,
+      "retrieval": "verified catalog",
+      "generation": "verified facts",
+      "degraded": false,
+      "timing": {
+        "total_ms": 0,
+        "retrieval_ms": 0,
+        "model_ms": 0
+      },
+      "evidence": []
+    },
+    {
+      "name": "Responsive mobile layout",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "name": "Mobile Chrome feedback confirmation",
+      "passed": true,
+      "status": 200,
+      "pageErrors": 0
+    },
+    {
+      "name": "Mobile Chrome feedback row in Postgres",
+      "passed": true,
+      "answerId": "2aee8d22-d9a2-4d49-8c70-288fced77a75",
+      "rating": "helpful",
+      "status": "answered",
+      "evidence": [
+        "c16qs-bands"
+      ],
+      "createdAt": "2026-11-14T16:13:53.684054Z"
+    }
+  ],
+  "notes": [
+    "The desktop harness captured all five answers and wrote feedback to Postgres, but its response watcher reached the test deadline. The mobile follow-up verified the confirmation directly in the UI and the matching Postgres row."
+  ]
+}
